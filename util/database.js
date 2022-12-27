@@ -1,8 +1,14 @@
-const Sequelize= require("sequelize");
-
-const sequelize=new Sequelize('appointment_booking','root','mysql@2022',{
-    dialect:'mysql',
-    host:'localhost'
+const Sequelize=require('sequelize');
+const sequelize=new Sequelize('practice_01','root','mysql@2022',{
+    host:'localhost',
+    dialect:'mysql'
 });
+
+try {
+    sequelize.authenticate();
+    console.log('Connection has been established successfully.');
+  } catch (error) {
+    console.error('Unable to connect to the database:', error);
+  }
 
 module.exports=sequelize;
